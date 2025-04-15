@@ -22,6 +22,11 @@ export default function Layout({
             icon={<TransactionsIcon />}
             title="Transactions"
           />
+          <SidebarItem
+            href={"/p2p-tranfers"}
+            icon={<P2PTransfersIcon />}
+            title="P2P Transfers"
+          />
         </div>
       </div>
       {children}
@@ -30,6 +35,24 @@ export default function Layout({
 }
 
 // Icons Fetched from https://heroicons.com/
+function P2PTransfersIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="size-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+      />
+    </svg>
+  );
+}
 function HomeIcon() {
   return (
     <svg

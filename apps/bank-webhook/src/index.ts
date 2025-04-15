@@ -4,7 +4,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.post("/hdfcWebhook", async (req, res) => {
-  const paymentInformation = {
+  // add zod validation
+  //add check if the on ramp transaction is already processed
+
+  const paymentInformation : {
+    token: string;
+    userId: number;
+    amount: number;
+  } = {
     token: req.body.token,
     userId: req.body.user_identifier,
     amount: Number(req.body.amount),
@@ -42,6 +49,6 @@ app.post("/hdfcWebhook", async (req, res) => {
   }
 });
 
-app.listen(3007, () => {
-  console.log("Server is running on port 3000");
+app.listen(3005, () => {
+  console.log("Server is running on port 3007");
 });
