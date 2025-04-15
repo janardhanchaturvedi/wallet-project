@@ -41,7 +41,7 @@ export default function SendCard() {
             />
           </div>
           <Button onClick={() => {
-            p2pTransfer(String(p2pDetails.number), p2pDetails.amount);
+            p2pTransfer(String(p2pDetails.number), p2pDetails.amount * 100);
           }}>Send</Button>
         </div>
       </Card>
