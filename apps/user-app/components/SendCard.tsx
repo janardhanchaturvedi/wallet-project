@@ -4,6 +4,7 @@ import { Card } from "@repo/ui/card";
 import { Center } from "@repo/ui/center";
 import { TextInput } from "@repo/ui/textinput";
 import React, { useState } from "react";
+import { p2pTransfer } from "../app/lib/actions/p2pTransfer";
 
 export default function SendCard() {
   const [p2pDetails, setP2PDetails] = useState({
@@ -39,7 +40,9 @@ export default function SendCard() {
               }}
             />
           </div>
-          <Button onClick={() => {}}>Send</Button>
+          <Button onClick={() => {
+            p2pTransfer(String(p2pDetails.number), p2pDetails.amount);
+          }}>Send</Button>
         </div>
       </Card>
     </Center>
