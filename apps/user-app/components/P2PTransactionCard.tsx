@@ -25,9 +25,9 @@ export const P2PTransactionCard = ({
           <div className="flex justify-between">
             <div>
               <div className="text-sm">Debited INR</div>
-              <div>to {t.toUser.toUser.name} </div>
+              <div>to {t?.toUser?.toUser?.name} </div>
               <div className="text-slate-600 text-xs">
-                {t.time.toDateString()}
+                {t?.time?.toDateString()}
               </div>
             </div>
             <div className="flex flex-col justify-center">
